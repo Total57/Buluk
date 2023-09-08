@@ -55,11 +55,11 @@ int Axis_1 (){
   cout << "\nIngresa los segundos que durara la accion: " ;
   cin >> tiempo ;
   if (mov == -1){
-  cout << "\n---- Los 2 motores NEO del brazo mecanico se mueven hacia atras por " << tiempo << " segundos ----" << endl; // Esto es debido al sistema de engranajes y basndas del robot
+  cout << "\n---- Los 2 motores NEO del brazo mecanico giran hacia atras por " << tiempo << " segundos ----" << endl; // Esto es debido al sistema de engranajes y basndas del robot
   cout << "---- El brazo mecanico se mueve hacia arriba ----" << endl;
   }
   if (mov == 1){
-  cout << "\n---- Los 2 motores NEO del brazo mecanico se mueven hacia adelante por " << tiempo << " segundos ----" << endl; // Esto es debido al sistema de engranajes y basndas del robot
+  cout << "\n---- Los 2 motores NEO del brazo mecanico giran hacia adelante por " << tiempo << " segundos ----" << endl; // Esto es debido al sistema de engranajes y basndas del robot
   cout << "---- El brazo mecanico se mueve hacia abajo ----" << endl;
   }
   return 0;
@@ -76,16 +76,29 @@ int Axis_5 (){
   cout << "\nIngresa los segundos que durara la accion: " ;
   cin >> tiempo ;
   if (mov == -1){
-  cout << "\n---- Los 2 motores NEO de la articulacion del brazo mecanico se mueven hacia atras por " << tiempo << " segundos ----" << endl;
+  cout << "\n---- Los 2 motores NEO de la articulacion del brazo mecanico giran hacia atras por " << tiempo << " segundos ----" << endl;
   cout << "---- El brazo mecanico se mueve hacia arriba ----" << endl;
   }
   if (mov == 1){
-  cout << "\n---- Los 2 motores NEO del brazo mecanico se mueven hacia enfrente por " << tiempo << " segundos ----" << endl;
+  cout << "\n---- Los 2 motores NEO del brazo mecanico giran hacia enfrente por " << tiempo << " segundos ----" << endl;
   cout << "---- El brazo mecanico se mueve hacia abajo ----" << endl;
-  return 0;
   }
+  return 0;
 }
 
+int Button_2 (){
+  cout << "\n---- 'Button_2' controla la apertura de la pinza ----" << endl;
+  cout << "---- Los 2 notores de linea roja giran hacia enfrente ----" << endl;
+  cout << "---- LA PINZA SE ABRE ----" << endl;
+  return 0;
+}
+
+int Button_1 (){
+  cout << "\n---- 'Button_' controla la crerradura de la pinza ----" << endl;
+  cout << "---- Los 2 notores de linea roja giran hacia atras ----" << endl;
+  cout << "---- LA PINZA SE CIERRA ----" << endl;
+  return 0;
+}
 int main (){
     int modo = 0;
     cout << "-------------------------------------- INICIO DEL PERIODO AUTONOMO --------------------------------------" << endl;
@@ -175,7 +188,7 @@ int main (){
         cout << "Acciones boton Button_1" << endl ;
       }
 
-      cout << "\nDigita el siguiente boton existente o digita 'finalizar' para terminar el programa: " ;
+      cout << "\nDigita el siguiente boton existente o digita 'finalizar' para terminar el programa (solo aplica cuando se haya completado el tiempo): " ;
       cin >> boton ;
     }else{
       cout << "----- El boton no existe -----" << endl;
