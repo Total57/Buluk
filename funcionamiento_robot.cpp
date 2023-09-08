@@ -8,11 +8,45 @@ y reaacciones del robot.
 
 #include <iostream>
 #include <vector>
-using namespace std ;
+using namespace std;
+
+
+int POV (){
+  int direccion ;
+  int tiempo ;
+  int distancia ;
+  cout << "\n---- 'POV' controla el movimiento general del robot por lo que hay 4 posibles direcciones (Cada una asociada a un numero) ----" << endl;
+  cout << "- Adelante = 0\n- Atras = 180\n- Giro Derecha = 90\n- Giro Izquierda = 270" << endl;
+  cout << "---- En caso de no digitar una direccion valida, el programa no funcionara ----" << endl;
+  cout << "Ingresa la direccion digitando el numero al que esta asociado:  " ;
+  cin >> direccion ;
+  cout << "\nIngresa los segundos que durara la accion: " ;
+  cin >> tiempo ;
+  distancia = tiempo * 10 ;
+  if (direccion == 0){
+    cout << "\n---- Los 4 motores NEO de las bandas avanzan hacia enfrente por " << tiempo << " segundos ----" << endl;
+    cout << "---- El robot se desplaza hacia enfrente " << distancia << " centimetros ----" << endl;
+  } 
+  if (direccion == 180){
+    cout << "\n---- Los 4 motores NEO de las bandas avanzan hacia atras por " << tiempo << " segundos ----" << endl;
+    cout << "---- El robot se desplaza hacia atras " << distancia << " centimetros ----" << endl;    
+  }
+  if (direccion == 90){
+    cout << "\n---- Los 2 motores NEO de la banda izquierda avanzan hacia adelante por " << tiempo << " segundos ----" << endl;
+    cout << "---- Los 2 motores NEO de la banda derecha avanzan hacia atras al mismo tiempo que los de la izquierda ---- " << endl;
+    cout << "---- El robot gira sobre su propio eje hacia la derecha ----" << endl;
+  }
+  if (direccion == 270){
+    cout << "\n---- Los 2 motores NEO de la banda derecha avanzan hacia adelante por " << tiempo << " segundos ----" << endl;
+    cout << "---- Los 2 motores NEO de la banda izquierda avanzan hacia atras al mismo tiempo que los de la derecha ---- " << endl;
+    cout << "---- El robot gira sobre su propio eje hacia la izquierda ----" << endl;
+  }
+  return 0;
+}
 
 int main (){
     int modo = 0;
-    cout << "----------- INICIO DEL PERIODO AUTONOMO -----------" << endl;
+    cout << "-------------------------------------- INICIO DEL PERIODO AUTONOMO --------------------------------------" << endl;
     cout << "-- Cada opcion realiza una accion diferente en los 15 segundos del autonomo --" << endl;
     cout << "-- Por favor selecciona una se las acciones posteriores --" << endl;
     cout << "Accion 1 - Girar 90 grados a la derecha, avanzar a la mitad de cancha y quedarse estatico" << endl;
@@ -63,30 +97,31 @@ int main (){
     cout << "---- El Robot dio una vuelta de 180 grados hacia la derecha en su misma posicion ----" << endl;
     cout << "\n------ EL Robot termina volteando a la estaciOn de carga ------ " << endl;
     }
-  cout << "\n----------- FIN DEL PERIODO AUTONOMO ----------- " << endl;
+  cout << "-------------------------------------- FIN DEL PERIODO AUTONOMO -------------------------------------- " << endl;
 
   // --------------------------------------------------------------------- TELEOPERADO ---------------------------------------------------------------------
-  cout << "\n----------- INICIO DEL TELEOPERADO -----------" << endl;
-  cout << "\n----------- INSTRUCCIONES  ETC -----------" << endl;
+  cout << "\n-------------------------------------- INICIO DEL TELEOPERADO --------------------------------------" << endl;
+  cout << "--- En el teleoperado el usuario debera de digitar un boton cada que se desee hacer una acción. A continuación, los botones existentes ---" << endl;
+  cout << "- POV - Controla el desplazamiento general del robot\n- Axis_1 - Controla el movimiento del brazo mecanico\n- Axis_5 - Controla la articulacion del brazo mecanico\n- Button_2 - Abre la pinza\n- Button_1 - Cierra la pinza" << endl;
   string boton ;
-  cout << "Digita algun boton existente: " ;
+  cout << "\nDigita algun boton existente: " ;
   cin >> boton ;
   while (boton != "finalizar"){
 
-    if (boton == "Axis_1" || boton == "Axis_5" || boton == "POV" || boton == "Button_2" || boton == "Button_1")
+    if (boton == "POV" || boton == "Axis_5" || boton == "Axis_1" || boton == "Button_2" || boton == "Button_1")
     {
       cout << "\n-----El boton existe -----" << endl;
       
-      if (boton == "Axis_1"){
-        cout << "Acciones boton Axis_1" << endl ;
+      if (boton == "POV"){
+        cout << POV () ;
       }
 
       if (boton == "Axis_5"){
         cout << "Acciones boton Axis_5" << endl;
       }
 
-      if (boton == "POV"){
-        cout << "Acciones boton POV" << endl ;
+      if (boton == "Axis_1"){
+        cout << "Acciones boton Axis_1" << endl ;
       }
 
       if (boton == "Button_2"){
@@ -97,10 +132,11 @@ int main (){
         cout << "Acciones boton Button_1" << endl ;
       }
 
-      cout << "Digita el siguiente boton existente o digita 'finalizar' para terminar el programa: " ;
+      cout << "\nDigita el siguiente boton existente o digita 'finalizar' para terminar el programa: " ;
       cin >> boton ;
     }else{
       cout << "----- El boton no existe -----" << endl;
+       cout << "- POV - Controla el desplazamiento general del robot\n- Axis_1 - Controla el movimiento del brazo mecanico\n- Axis_5 - Controla la articulacion del brazo mecanico\n- Button_2 - Abre la pinza\n- Button_1 - Cierra la pinza" << endl;
       cout << "Por favor digita un boton existente: " ;
       cin >> boton ;
     }
