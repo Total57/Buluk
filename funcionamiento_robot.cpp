@@ -24,20 +24,20 @@ int POV (){
   cin >> tiempo ;
   distancia = tiempo * 10 ;
   if (direccion == 0){
-    cout << "\n---- Los 4 motores NEO de las bandas avanzan hacia enfrente por " << tiempo << " segundos ----" << endl;
+    cout << "\n---- Los 4 motores NEO de las bandas avanzan hacia enfrente por " << tiempo << " segundos con una potencia de 0.5 ----" << endl;
     cout << "---- El robot se desplaza hacia enfrente " << distancia << " centimetros ----" << endl;
   } 
   if (direccion == 180){
-    cout << "\n---- Los 4 motores NEO de las bandas avanzan hacia atras por " << tiempo << " segundos ----" << endl;
+    cout << "\n---- Los 4 motores NEO de las bandas avanzan hacia atras por " << tiempo << " segundos con una potencia de 0.5 ----" << endl;
     cout << "---- El robot se desplaza hacia atras " << distancia << " centimetros ----" << endl;    
   }
   if (direccion == 90){
-    cout << "\n---- Los 2 motores NEO de la banda izquierda avanzan hacia adelante por " << tiempo << " segundos ----" << endl;
+    cout << "\n---- Los 2 motores NEO de la banda izquierda avanzan hacia adelante por " << tiempo << " segundos con una potencia de 0.5 ----" << endl;
     cout << "---- Los 2 motores NEO de la banda derecha avanzan hacia atras al mismo tiempo que los de la izquierda ---- " << endl;
     cout << "---- El robot gira sobre su propio eje hacia la derecha ----" << endl;
   }
   if (direccion == 270){
-    cout << "\n---- Los 2 motores NEO de la banda derecha avanzan hacia adelante por " << tiempo << " segundos ----" << endl;
+    cout << "\n---- Los 2 motores NEO de la banda derecha avanzan hacia adelante por " << tiempo << " segundos con una potencia de 0.5 ----" << endl;
     cout << "---- Los 2 motores NEO de la banda izquierda avanzan hacia atras al mismo tiempo que los de la derecha ---- " << endl;
     cout << "---- El robot gira sobre su propio eje hacia la izquierda ----" << endl;
   }
@@ -55,11 +55,11 @@ int Axis_1 (){
   cout << "\nIngresa los segundos que durara la accion: " ;
   cin >> tiempo ;
   if (mov == -1){
-  cout << "\n---- Los 2 motores NEO del brazo mecanico giran hacia atras por " << tiempo << " segundos ----" << endl; // Esto es debido al sistema de engranajes y basndas del robot
+  cout << "\n---- Los 2 motores NEO del brazo mecanico giran hacia atras por " << tiempo << " segundos con una potencia de 1 ----" << endl; // Esto es debido al sistema de engranajes y bandas del robot
   cout << "---- El brazo mecanico se mueve hacia arriba ----" << endl;
   }
   if (mov == 1){
-  cout << "\n---- Los 2 motores NEO del brazo mecanico giran hacia adelante por " << tiempo << " segundos ----" << endl; // Esto es debido al sistema de engranajes y basndas del robot
+  cout << "\n---- Los 2 motores NEO del brazo mecanico giran hacia adelante por " << tiempo << " segundos con una potencia de 1 ----" <<  endl; // Esto es debido al sistema de engranajes y bandas del robot
   cout << "---- El brazo mecanico se mueve hacia abajo ----" << endl;
   }
   return 0;
@@ -76,11 +76,11 @@ int Axis_5 (){
   cout << "\nIngresa los segundos que durara la accion: " ;
   cin >> tiempo ;
   if (mov == -1){
-  cout << "\n---- Los 2 motores NEO de la articulacion del brazo mecanico giran hacia atras por " << tiempo << " segundos ----" << endl;
+  cout << "\n---- Los 2 motores NEO de la articulacion del brazo mecanico giran hacia atras por " << tiempo << " segundos con una potencia de 0.7 ----" << endl;
   cout << "---- El brazo mecanico se mueve hacia arriba ----" << endl;
   }
   if (mov == 1){
-  cout << "\n---- Los 2 motores NEO del brazo mecanico giran hacia enfrente por " << tiempo << " segundos ----" << endl;
+  cout << "\n---- Los 2 motores NEO del brazo mecanico giran hacia enfrente por " << tiempo << " segundos con una potencia de 0.7 ----" << endl;
   cout << "---- El brazo mecanico se mueve hacia abajo ----" << endl;
   }
   return 0;
@@ -88,14 +88,14 @@ int Axis_5 (){
 
 int Button_2 (){
   cout << "\n---- 'Button_2' controla la apertura de la pinza ----" << endl;
-  cout << "---- Los 2 motores de linea roja giran hacia enfrente ----" << endl;
+  cout << "---- Los 2 motores de linea roja giran hacia enfrente por 1 segundo con una potencia de 0.5 ----" << endl;
   cout << "---- LA PINZA SE ABRE ----" << endl;
   return 0;
 }
 
 int Button_1 (){
   cout << "\n---- 'Button_' controla la crerradura de la pinza ----" << endl;
-  cout << "---- Los 2 motores de linea roja giran hacia atras ----" << endl;
+  cout << "---- Los 2 motores de linea roja giran hacia atras por 1 segundo con una potencia de 0.5  ----" << endl;
   cout << "---- LA PINZA SE CIERRA ----" << endl;
   return 0;
 }
@@ -115,39 +115,39 @@ int main (){
     }
 
     if (modo == 1){
-    cout << "\n---- Los 2 motores NEO de la banda izquierda se activan hacia enfrente por 3 segundos ---- " << endl;
-    cout << "---- Los 2 motores NEO de la banda derecha se activan hacia atras al mismo tiempo que los de la izquierda ---- " << endl;
+    cout << "\n---- Los 2 motores NEO de la banda izquierda se activan hacia enfrente por 3 segundos con una potencia de 0.5 ---- " << endl;
+    cout << "---- Los 2 motores NEO de la banda derecha se activan hacia atras al mismo tiempo que los de la izquierda con una potencia de 0.5 ---- " << endl;
     cout << "---- El Robot dio una vuelta de 90 grados hacia la derecha en su misma posicion ----" << endl;
-    cout << "\n---- Los 4 motores NEO de las bandas avanzan hacia enfrente por 7 segundos ---- " << endl;
+    cout << "\n---- Los 4 motores NEO de las bandas avanzan hacia enfrente por 7 segundos con una potencia de 0.5 ---- " << endl;
     cout << "---- El robot esta avanzando hacia el frente para llegar a la linea ----" << endl;
     cout << "\n------ El robot se detiene al cruzar la linea con 3 segundos de sobra ------" << endl;
     }
 
     if (modo == 2){
-    cout << "\n---- Los 2 motores NEO de la banda izquierda se activan hacia enfrente por 3 segundos ---- " << endl;
-    cout << "---- Los 2 motores NEO de la banda derecha se activan hacia atras al mismo tiempo que los de la izquierda ---- " << endl;
+    cout << "\n---- Los 2 motores NEO de la banda izquierda se activan hacia enfrente por 3 segundos con una potencia de 0.5 ---- " << endl;
+    cout << "---- Los 2 motores NEO de la banda derecha se activan hacia atras al mismo tiempo que los de la izquierda con una potencia de 0.5 ---- " << endl;
     cout << "---- El Robot dio una vuelta de 90 grados hacia la derecha en su misma posicion ----" << endl;
-    cout << "\n---- Los 4 motores NEO de las bandas avanzan hacia enfrente por 7 segundos ---- " << endl;
+    cout << "\n---- Los 4 motores NEO de las bandas avanzan hacia enfrente por 7 segundos con una potencia de 0.5 ---- " << endl;
     cout << "---- El robot esta avanzando hacia el frente para llegar a la linea ----" << endl;
     cout << "\n------ El robot se detiene al cruzar la linea  ------" << endl;
-    cout << "\n---- Los 2 motores NEO del brazo mecanico se activan hacia atras por 1 segundo ----" << endl;
+    cout << "\n---- Los 2 motores NEO del brazo mecanico se activan hacia atras por 1 segundo con una potencia de 1----" << endl;
     cout << "---- El brazo mecanico se mueve hacia arriba ----" << endl;
-    cout << "\n---- Los 2 motores NEO de la articulación del brazo mecanico se activan hacia atras por 1 segundo ----" << endl;
+    cout << "\n---- Los 2 motores NEO de la articulación del brazo mecanico se activan hacia atras por 1 segundo con una potencia de 0.7 ----" << endl;
     cout << "---- La articulacion de brazo mecanico se mueve hacia arriba ----" << endl;
-    cout << "\n---- Los 2 motores de linea roja de la pinza se activan hacia enfrente por 1 segundo ----" << endl;
+    cout << "\n---- Los 2 motores de linea roja de la pinza se activan hacia enfrente por 1 segundo con una potencia de 0.5 ----" << endl;
     cout << "---- La pinza se abre ----" << endl;  
     cout << "\n---- Los 4 motores NEO de brazo activan hacia enfrente y los 2 motores de linea roja de la pinza se activan hacia atras por 1 segundo "  << endl;
     cout << "\n------ El brazo y la pinza regresan a su posicion inicial con 0 segundos de sobra ------" << endl;
     }
 
     if (modo == 3){
-    cout << "\n---- Los 2 motores NEO de la banda izquierda se activan hacia enfrente por 3 segundos ---- " << endl;
-    cout << "\n---- Los 2 motores NEO de la banda derecha se activan hacia atras al mismo tiempo que los de la izquierda ---- " << endl;
+    cout << "\n---- Los 2 motores NEO de la banda izquierda se activan hacia enfrente por 3 segundos con una potencia de 0.5 ---- " << endl;
+    cout << "\n---- Los 2 motores NEO de la banda derecha se activan hacia atras al mismo tiempo que los de la izquierda con una potencia de 0.5  ---- " << endl;
     cout << "---- El Robot dio una vuelta de 90 grados hacia la derecha en su misma posicion ----" << endl;
-    cout << "\n---- Los 4 motores NEO de las bandas avanzan hacia enfrente por 7 segundos ---- " << endl;
+    cout << "\n---- Los 4 motores NEO de las bandas avanzan hacia enfrente por 7 segundos con una potencia de 0.5 ---- " << endl;
     cout << "---- El robot esta avanzando hacia el frente para llegar a la linea ----" << endl;
     cout << "\n------ El robot se detiene al cruzar la linea ------" << endl;
-    cout << "\n---- Los 2 motores NEO de la banda izquierda se activan hacia enfrente por 5 segundos ---- " << endl;
+    cout << "\n---- Los 2 motores NEO de la banda izquierda se activan hacia enfrente por 5 segundos con una potencia de 0.5  ---- " << endl;
     cout << "---- Los 2 motores NEO de la banda derecha se activan hacia atras al mismo tiempo que los de la izquierda ---- " << endl;
     cout << "---- El Robot dio una vuelta de 180 grados hacia la derecha en su misma posicion ----" << endl;
     cout << "\n------ EL Robot termina volteando a la estaciOn de carga ------ " << endl;
@@ -187,12 +187,11 @@ int main (){
       if (boton == "Button_1"){
         cout << Button_1 () ;
       }
-
       cout << "\nDigita el siguiente boton existente o digita 'finalizar' para terminar el programa (solo aplica cuando se haya completado el tiempo): " ;
       cin >> boton ;
     }else{
       cout << "----- El boton no existe -----" << endl;
-       cout << "- POV - Controla el desplazamiento general del robot\n- Axis_1 - Controla el movimiento del brazo mecanico\n- Axis_5 - Controla la articulacion del brazo mecanico\n- Button_2 - Abre la pinza\n- Button_1 - Cierra la pinza" << endl;
+      cout << "\n- POV - Controla el desplazamiento general del robot\n- Axis_1 - Controla el movimiento del brazo mecanico\n- Axis_5 - Controla la articulacion del brazo mecanico\n- Button_2 - Abre la pinza\n- Button_1 - Cierra la pinza" << endl;
       cout << "Por favor digita un boton existente: " ;
       cin >> boton ;
     }
