@@ -61,23 +61,47 @@ int main (){
     cout << "\n---- Los 2 motores NEO de la banda izquierda se activan hacia enfrente por 5 segundos ---- " << endl;
     cout << "---- Los 2 motores NEO de la banda derecha se activan hacia atras al mismo tiempo que los de la izquierda ---- " << endl;
     cout << "---- El Robot dio una vuelta de 180 grados hacia la derecha en su misma posicion ----" << endl;
-    cout << "\n------ EL Robot termina volteando a la estación de carga ------ " << endl;
+    cout << "\n------ EL Robot termina volteando a la estaciOn de carga ------ " << endl;
     }
-  cout << "\n----------- FIN DEL PERIODO AUTONMO ----------- " << endl;
+  cout << "\n----------- FIN DEL PERIODO AUTONOMO ----------- " << endl;
 
   // --------------------------------------------------------------------- TELEOPERADO ---------------------------------------------------------------------
   cout << "\n----------- INICIO DEL TELEOPERADO -----------" << endl;
   cout << "\n----------- INSTRUCCIONES  ETC -----------" << endl;
   string boton ;
-  cout << "Presiona algun boton existente: " ;
+  cout << "Digita algun boton existente: " ;
   cin >> boton ;
   while (boton != "finalizar"){
 
-    if (boton == "Axis_1" || boton == "Axis_5" || boton == "POV" || boton == "Button_2" || boton == "Button_1"){
-      cout << "-----El boton existe -----" << endl;
+    if (boton == "Axis_1" || boton == "Axis_5" || boton == "POV" || boton == "Button_2" || boton == "Button_1")
+    {
+      cout << "\n-----El boton existe -----" << endl;
+      
+      if (boton == "Axis_1"){
+        cout << "Acciones boton Axis_1" << endl ;
+      }
+
+      if (boton == "Axis_5"){
+        cout << "Acciones boton Axis_5" << endl;
+      }
+
+      if (boton == "POV"){
+        cout << "Acciones boton POV" << endl ;
+      }
+
+      if (boton == "Button_2"){
+        cout << "Acciones boton Button_2" << endl ;
+      }
+      
+      if (boton == "Button_1"){
+        cout << "Acciones boton Button_1" << endl ;
+      }
+
+      cout << "Digita el siguiente boton existente o digita 'finalizar' para terminar el programa: " ;
+      cin >> boton ;
     }else{
       cout << "----- El boton no existe -----" << endl;
-      cout << "Por favor presiona un boton existente: " ;
+      cout << "Por favor digita un boton existente: " ;
       cin >> boton ;
     }
 
