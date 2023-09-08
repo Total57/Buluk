@@ -88,14 +88,14 @@ int Axis_5 (){
 
 int Button_2 (){
   cout << "\n---- 'Button_2' controla la apertura de la pinza ----" << endl;
-  cout << "---- Los 2 notores de linea roja giran hacia enfrente ----" << endl;
+  cout << "---- Los 2 motores de linea roja giran hacia enfrente ----" << endl;
   cout << "---- LA PINZA SE ABRE ----" << endl;
   return 0;
 }
 
 int Button_1 (){
   cout << "\n---- 'Button_' controla la crerradura de la pinza ----" << endl;
-  cout << "---- Los 2 notores de linea roja giran hacia atras ----" << endl;
+  cout << "---- Los 2 motores de linea roja giran hacia atras ----" << endl;
   cout << "---- LA PINZA SE CIERRA ----" << endl;
   return 0;
 }
@@ -181,11 +181,11 @@ int main (){
       }
 
       if (boton == "Button_2"){
-        cout << "Acciones boton Button_2" << endl ;
+        cout << Button_2 () ;
       }
       
       if (boton == "Button_1"){
-        cout << "Acciones boton Button_1" << endl ;
+        cout << Button_1 () ;
       }
 
       cout << "\nDigita el siguiente boton existente o digita 'finalizar' para terminar el programa (solo aplica cuando se haya completado el tiempo): " ;
@@ -197,5 +197,6 @@ int main (){
       cin >> boton ;
     }
   }
+   // --------------------------------------------------------------------- TELEOPERADO ---------------------------------------------------------------------
   return 0;
 }
