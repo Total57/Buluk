@@ -134,7 +134,7 @@ int main (){ // Funcion del codigo principal
     cout << "-- Cada opcion realiza una accion diferente en los 15 segundos del autonomo --" << endl;
     cout << "-- Por favor selecciona una se las acciones posteriores --" << endl;
     cout << "Accion 1 - Girar 90 grados a la derecha, avanzar a la mitad de cancha y quedarse estatico" << endl;
-    cout << "Accion 2 - Girar 90 grados a la derecha, avanzar a la mitad de cancha y mover el brazo mecánico arriba - abajo y abrir - cerrar la garra" << endl;
+    cout << "Accion 2 - Girar 90 grados a la derecha, avanzar a la mitad de cancha y mover el brazo mecanico arriba - abajo y abrir - cerrar la garra" << endl;
     cout << "Accion 3 - Girar 90 grados a la derecha, avanzar a la mitad de cancha y dar un giro de 180 grados para terminar volteando al inicio" << endl;
     cout << "Selecciona una de las tres acciones digitando '1' '2' o '3': " ;
     cin >> modo ;
@@ -171,7 +171,7 @@ int main (){ // Funcion del codigo principal
 
     if (modo == 3){
     cout << "\n---- Los 2 motores NEO de la banda izquierda se activan hacia enfrente por 3 segundos con una potencia de 0.5 ---- " << endl;
-    cout << "\n---- Los 2 motores NEO de la banda derecha se activan hacia atras al mismo tiempo que los de la izquierda con una potencia de 0.5  ---- " << endl;
+    cout << "---- Los 2 motores NEO de la banda derecha se activan hacia atras al mismo tiempo que los de la izquierda con una potencia de 0.5  ---- " << endl;
     cout << "---- El Robot dio una vuelta de 90 grados hacia la derecha en su misma posicion ----" << endl;
     cout << "\n---- Los 4 motores NEO de las bandas avanzan hacia enfrente por 7 segundos con una potencia de 0.5 ---- " << endl;
     cout << "---- El robot esta avanzando hacia el frente para llegar a la linea ----" << endl;
