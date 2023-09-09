@@ -4,6 +4,8 @@
 Este código es una simulación del controlamiento de un robot de BULUK
 ya que este se ejecutara solamente en la terminal para simular acciones
 y reaacciones del robot.
+
+El robot esta conecado por 'Can' por lo que el numero del controlador y del puerto seran el mismo por lo que solo indicare el numero del CAN
 */
 
 #include <iostream>
@@ -11,13 +13,19 @@ y reaacciones del robot.
 using namespace std;
 
 
-int POV (){
+int POV (){ // Esta función controla todo el desplazamiento del robot. Controla 4 motores NEO los cuales estan conectados a las ruedas 
+  /*
+  - Motor de la rueda delantera izquireda = Can 10
+  - Motor de la rueda trasera izquireda = Can 11
+  - Motor de la rueda delantera derecha = Can 12
+  - Motor de la rueda trasera derecha = Can 13
+  */
   int direccion ;
   int tiempo ;
   int distancia ;
   cout << "\n---- 'POV' controla el movimiento general del robot por lo que hay 4 posibles direcciones (Cada una asociada a un numero) ----" << endl;
   cout << "- Adelante = 0\n- Atras = 180\n- Giro Derecha = 90\n- Giro Izquierda = 270" << endl;
-  cout << "---- En caso de no digitar una direccion valida, el programa no funcionara ----" << endl;
+  cout << "---- EN CASO DE NO DIGITAR UNA DIRECCION VALIDA, EL PROGRAMA NO FUNCIONARA ----" << endl;
   cout << "\nIngresa la direccion digitando el numero al que esta asociado:  " ;
   cin >> direccion ;
   cout << "\nIngresa los segundos que durara la accion: " ;
@@ -44,12 +52,17 @@ int POV (){
   return 0;
 }
 
-int Axis_1 (){
+int Axis_1 (){ // Esta funcion controla el movimiento principal del brazo mecanico. Controla de 2 motores de NEO los cuales tienen cadenas y permiten que el brazo se mueva. 
+  /*
+    -------Los motores deben de trabajr en paralelo para que el brazo funcione-------
+  - Brazo mecanico banda izquierda = Can 14
+  - Brazo mecanico banda derecha = Can 15
+  */
   int mov ;
   int tiempo ;
   cout << "\n---- 'Axis_1' controla el movimiento del brazo mecanico por lo que hay 2 posibles movimientos (Cada una asociada a un numero) ----" << endl;
   cout << "- Arriba = -1\n- Abajo = 1" << endl;
-  cout << "---- En caso de no digitar una movimiento valido, el programa no funcionara ----" << endl;
+  cout << "---- EN CASO DE NO DIGITAR UN MOVIMIENTO VALIDO, EL PROGRAMA NO FUNCIONARA ----" << endl;
   cout << "\nIngresa el movimiento, digitando el numero al que esta asociado:  " ;
   cin >> mov ;
   cout << "\nIngresa los segundos que durara la accion: " ;
@@ -65,12 +78,17 @@ int Axis_1 (){
   return 0;
 }
 
-int Axis_5 (){
+int Axis_5 (){ // Esta funcion controla el movimiento de la articulacion del brazo mecanico. Controla de 2 motores de NEO los cuales tienen cadenas y permiten la articulacion se mueva
+  /*
+  -------Los motores deben de trabajr en paralelo para que la articulacion funcione-------
+  - Articulacion brazo mecanico banda izquierda = Can 16
+  - Articulacion brazo mecanico banda derecha = Can 17
+  */
   int mov ;
   int tiempo ;
   cout << "\n---- 'Axis_5' controla la articulacion media del brazo mecanico por lo que hay 2 posibles movimientos (Cada una asociada a un numero) ----" << endl;
   cout << "- Arriba = -1\n- Abajo = 1" << endl;
-  cout << "---- En caso de no digitar una movimiento valido, el programa no funcionara ----" << endl;
+  cout << "---- EN CASO DE NO DIGITAR UN MOVIMIENTO VALIDO, EL PROGRAMA NO FUNCIONARA ----" << endl;
   cout << "\nIngresa el movimiento, digitando el numero al que esta asociado:  " ;
   cin >> mov ;
   cout << "\nIngresa los segundos que durara la accion: " ;
@@ -86,20 +104,31 @@ int Axis_5 (){
   return 0;
 }
 
-int Button_2 (){
+int Button_2 (){ // Esta funcion controla la apretura de la pinza. Controla dos motores de linea roja 
+  /*
+  ------- Los motores deben de moverse hacia lados opuestos para que la pinza abra -------
+  - Motor pinza izquierdo = Can 18
+  - Motor pinza derecho  = Can 19
+  */
   cout << "\n---- 'Button_2' controla la apertura de la pinza ----" << endl;
   cout << "---- Los 2 motores de linea roja giran hacia enfrente por 1 segundo con una potencia de 0.5 ----" << endl;
   cout << "---- LA PINZA SE ABRE ----" << endl;
   return 0;
 }
 
-int Button_1 (){
-  cout << "\n---- 'Button_' controla la crerradura de la pinza ----" << endl;
+int Button_1 (){ // Esta funcion controla el cierre de la pinza. Controla dos motores de linea roja 
+  /*
+  ------- Los motores deben de moverse hacia lados opuestos para que la pinza cierre -------
+  - Motor pinza izquierdo = Can 18
+  - Motor pinza derecho = Can 19
+  */
+  cout << "\n---- 'Button_1' controla la crerradura de la pinza ----" << endl;
   cout << "---- Los 2 motores de linea roja giran hacia atras por 1 segundo con una potencia de 0.5  ----" << endl;
   cout << "---- LA PINZA SE CIERRA ----" << endl;
   return 0;
 }
-int main (){
+
+int main (){ // Funcion del codigo principal
     int modo = 0;
     cout << "-------------------------------------- INICIO DEL PERIODO AUTONOMO --------------------------------------" << endl;
     cout << "-- Cada opcion realiza una accion diferente en los 15 segundos del autonomo --" << endl;
@@ -158,13 +187,14 @@ int main (){
   // --------------------------------------------------------------------- TELEOPERADO ---------------------------------------------------------------------
   cout << "\n-------------------------------------- INICIO DEL TELEOPERADO --------------------------------------" << endl;
   cout << "--- En el teleoperado el usuario debera de digitar un boton cada que se desee hacer una accion. A continuacion, los botones existentes ---" << endl;
-  cout << "\n- POV - Controla el desplazamiento general del robot\n- Axis_1 - Controla el movimiento del brazo mecanico\n- Axis_5 - Controla la articulacion del brazo mecanico\n- Button_2 - Abre la pinza\n- Button_1 - Cierra la pinza" << endl;
+  cout << "\n BOTON            ACCION" << endl;
+  cout << "- POV - Controla el desplazamiento general del robot\n- Axis_1 - Controla el movimiento del brazo mecanico\n- Axis_5 - Controla la articulacion del brazo mecanico\n- Button_2 - Abre la pinza\n- Button_1 - Cierra la pinza" << endl;
   string boton ;
   cout << "\nDigita algun boton existente: " ;
   cin >> boton ;
   while (boton != "finalizar"){
 
-    if ("POV" || boton == "pov" || boton == "Pov" ||boton == "Axis_5" || boton == "axis_5" || boton == "axis5" || boton == "Axis5" || boton == "AXIS_5" || boton == "axis_5" || boton =="AXIS5" || boton == "Axis_1" || boton == "axis_1" || boton == "axis1" || boton == "Axis1" || boton == "AXIS_1" || boton == "axis_1" || boton =="AXIS1" || boton == "Button_2"|| boton == "button_2" || boton == "button2" || boton == "BUTTON_2" || boton == "BUTTON2" || boton == "boton_2" || boton == "boton2" || boton == "BOTON2" || boton == "Button_1"|| boton == "button_1" || boton == "button1" || boton == "BUTTON_1" || boton == "BUTTON1" || boton == "boton_1" || boton == "boton1" || boton == "BOTON1")
+    if (boton == "POV" || boton == "pov" || boton == "Pov" ||boton == "Axis_5" || boton == "axis_5" || boton == "axis5" || boton == "Axis5" || boton == "AXIS_5" || boton == "axis_5" || boton =="AXIS5" || boton == "Axis_1" || boton == "axis_1" || boton == "axis1" || boton == "Axis1" || boton == "AXIS_1" || boton == "axis_1" || boton =="AXIS1" || boton == "Button_2"|| boton == "button_2" || boton == "button2" || boton == "BUTTON_2" || boton == "BUTTON2" || boton == "boton_2" || boton == "boton2" || boton == "BOTON2" || boton == "Button_1"|| boton == "button_1" || boton == "button1" || boton == "BUTTON_1" || boton == "BUTTON1" || boton == "boton_1" || boton == "boton1" || boton == "BOTON1")
     {
       cout << "\n-----El boton existe -----" << endl;
       
@@ -187,15 +217,17 @@ int main (){
       if (boton == "Button_1"|| boton == "button_1" || boton == "button1" || boton == "BUTTON_1" || boton == "BUTTON1" || boton == "boton_1" || boton == "boton1" || boton == "BOTON1"){
         cout << Button_1 () ;
       }
-      cout << "\nDigita el siguiente boton existente o digita 'finalizar' para terminar el programa (solo aplica cuando se haya completado el tiempo): " ;
+      cout << "\nDigita el otro boton existente o digita 'finalizar' para terminar el programa (solo aplica cuando se haya completado el tiempo): " ;
       cin >> boton ;
     }else{
       cout << "----- El boton no existe -----" << endl;
-      cout << "\n- POV - Controla el desplazamiento general del robot\n- Axis_1 - Controla el movimiento del brazo mecanico\n- Axis_5 - Controla la articulacion del brazo mecanico\n- Button_2 - Abre la pinza\n- Button_1 - Cierra la pinza" << endl;
-      cout << "Por favor digita un boton existente: " ;
+      cout << "\n BOTON            ACCION" << endl;
+      cout << "- POV - Controla el desplazamiento general del robot\n- Axis_1 - Controla el movimiento del brazo mecanico\n- Axis_5 - Controla la articulacion del brazo mecanico\n- Button_2 - Abre la pinza\n- Button_1 - Cierra la pinza" << endl;
+      cout << "\nPor favor digita un boton existente: " ;
       cin >> boton ;
     }
   }
-   // --------------------------------------------------------------------- TELEOPERADO ---------------------------------------------------------------------
+  cout << "\n-------------------------------------- FIN DEL TELEOPERADO --------------------------------------" << endl;
+  // --------------------------------------------------------------------- TELEOPERADO ---------------------------------------------------------------------
   return 0;
 }
