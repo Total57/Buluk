@@ -164,27 +164,27 @@ int main (){
   cin >> boton ;
   while (boton != "finalizar"){
 
-    if (boton == "POV" || boton == "Axis_5" || boton == "Axis_1" || boton == "Button_2" || boton == "Button_1")
+    if ("POV" || boton == "pov" || boton == "Pov" ||boton == "Axis_5" || boton == "axis_5" || boton == "axis5" || boton == "Axis5" || boton == "AXIS_5" || boton == "axis_5" || boton =="AXIS5" || boton == "Axis_1" || boton == "axis_1" || boton == "axis1" || boton == "Axis1" || boton == "AXIS_1" || boton == "axis_1" || boton =="AXIS1" || boton == "Button_2"|| boton == "button_2" || boton == "button2" || boton == "BUTTON_2" || boton == "BUTTON2" || boton == "boton_2" || boton == "boton2" || boton == "BOTON2" || boton == "Button_1"|| boton == "button_1" || boton == "button1" || boton == "BUTTON_1" || boton == "BUTTON1" || boton == "boton_1" || boton == "boton1" || boton == "BOTON1")
     {
       cout << "\n-----El boton existe -----" << endl;
       
-      if (boton == "POV"){
+      if (boton == "POV" || boton == "pov" || boton == "Pov"){
         cout << POV () ;
       }
 
-      if (boton == "Axis_5"){
+      if (boton == "Axis_5" || boton == "axis_5" || boton == "axis5" || boton == "Axis5" || boton == "AXIS_5" || boton == "axis_5" || boton =="AXIS5"){
         cout << Axis_5 () ;
       }
 
-      if (boton == "Axis_1"){
+      if (boton == "Axis_1" || boton == "axis_1" || boton == "axis1" || boton == "Axis1" || boton == "AXIS_1" || boton == "axis_1" || boton =="AXIS1"){
         cout << Axis_1 () ;
       }
 
-      if (boton == "Button_2"){
+      if (boton == "Button_2"|| boton == "button_2" || boton == "button2" || boton == "BUTTON_2" || boton == "BUTTON2" || boton == "boton_2" || boton == "boton2" || boton == "BOTON2"){
         cout << Button_2 () ;
       }
       
-      if (boton == "Button_1"){
+      if (boton == "Button_1"|| boton == "button_1" || boton == "button1" || boton == "BUTTON_1" || boton == "BUTTON1" || boton == "boton_1" || boton == "boton1" || boton == "BOTON1"){
         cout << Button_1 () ;
       }
       cout << "\nDigita el siguiente boton existente o digita 'finalizar' para terminar el programa (solo aplica cuando se haya completado el tiempo): " ;
