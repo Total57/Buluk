@@ -129,6 +129,7 @@ int Button_1 (){ // Esta funcion controla el cierre de la pinza. Controla dos mo
 }
 
 int main (){ // Funcion del codigo principal
+
     int modo = 0;
     cout << "-------------------------------------- INICIO DEL PERIODO AUTONOMO --------------------------------------" << endl;
     cout << "-- Cada opcion realiza una accion diferente en los 15 segundos del autonomo --" << endl;
