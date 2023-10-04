@@ -34,22 +34,25 @@ int POV (){ // Esta función controla todo el desplazamiento del robot. Controla
   if (direccion == 0){
     cout << "\n---- Los 4 motores NEO de las bandas avanzan hacia enfrente por " << tiempo << " segundos con una potencia de 0.5 ----" << endl;
     cout << "---- El robot se desplaza hacia enfrente " << distancia << " centimetros ----" << endl;
+    cout << " Seleccionaste - " ;
   } 
   if (direccion == 180){
     cout << "\n---- Los 4 motores NEO de las bandas avanzan hacia atras por " << tiempo << " segundos con una potencia de 0.5 ----" << endl;
     cout << "---- El robot se desplaza hacia atras " << distancia << " centimetros ----" << endl;    
+    cout << " Seleccionaste - " ;
   }
   if (direccion == 90){
     cout << "\n---- Los 2 motores NEO de la banda izquierda avanzan hacia adelante por " << tiempo << " segundos con una potencia de 0.5 ----" << endl;
     cout << "---- Los 2 motores NEO de la banda derecha avanzan hacia atras al mismo tiempo que los de la izquierda ---- " << endl;
     cout << "---- El robot gira sobre su propio eje hacia la derecha ----" << endl;
+    cout << " Seleccionaste - " ;
   }
   if (direccion == 270){
     cout << "\n---- Los 2 motores NEO de la banda derecha avanzan hacia adelante por " << tiempo << " segundos con una potencia de 0.5 ----" << endl;
     cout << "---- Los 2 motores NEO de la banda izquierda avanzan hacia atras al mismo tiempo que los de la derecha ---- " << endl;
     cout << "---- El robot gira sobre su propio eje hacia la izquierda ----" << endl;
+    cout << " Seleccionaste - " ;
   }
-  return 0;
 }
 
 int Axis_1 (){ // Esta funcion controla el movimiento principal del brazo mecanico. Controla de 2 motores de NEO los cuales tienen cadenas y permiten que el brazo se mueva. 
@@ -70,12 +73,13 @@ int Axis_1 (){ // Esta funcion controla el movimiento principal del brazo mecani
   if (mov == -1){
   cout << "\n---- Los 2 motores NEO del brazo mecanico giran hacia atras por " << tiempo << " segundos con una potencia de 1 ----" << endl; // Esto es debido al sistema de engranajes y bandas del robot
   cout << "---- El brazo mecanico se mueve hacia arriba ----" << endl;
+  cout << " Seleccionaste - " ;
   }
   if (mov == 1){
   cout << "\n---- Los 2 motores NEO del brazo mecanico giran hacia adelante por " << tiempo << " segundos con una potencia de 1 ----" <<  endl; // Esto es debido al sistema de engranajes y bandas del robot
   cout << "---- El brazo mecanico se mueve hacia abajo ----" << endl;
+  cout << " Seleccionaste - " ;
   }
-  return 0;
 }
 
 int Axis_5 (){ // Esta funcion controla el movimiento de la articulacion del brazo mecanico. Controla de 2 motores de NEO los cuales tienen cadenas y permiten la articulacion se mueva
@@ -96,12 +100,13 @@ int Axis_5 (){ // Esta funcion controla el movimiento de la articulacion del bra
   if (mov == -1){
   cout << "\n---- Los 2 motores NEO de la articulacion del brazo mecanico giran hacia atras por " << tiempo << " segundos con una potencia de 0.7 ----" << endl;
   cout << "---- El brazo mecanico se mueve hacia arriba ----" << endl;
+  cout << " Seleccionaste - " ;
   }
   if (mov == 1){
   cout << "\n---- Los 2 motores NEO del brazo mecanico giran hacia enfrente por " << tiempo << " segundos con una potencia de 0.7 ----" << endl;
   cout << "---- El brazo mecanico se mueve hacia abajo ----" << endl;
+  cout << " Seleccionaste - " ;
   }
-  return 0;
 }
 
 int Button_2 (){ // Esta funcion controla la apretura de la pinza. Controla dos motores de linea roja 
@@ -113,6 +118,7 @@ int Button_2 (){ // Esta funcion controla la apretura de la pinza. Controla dos 
   cout << "\n---- 'Button_2' controla la apertura de la pinza ----" << endl;
   cout << "---- Los 2 motores de linea roja giran hacia enfrente por 1 segundo con una potencia de 0.5 ----" << endl;
   cout << "---- LA PINZA SE ABRE ----" << endl;
+  cout << " La accion ha terminado - " ;
   return 0;
 }
 
@@ -125,6 +131,7 @@ int Button_1 (){ // Esta funcion controla el cierre de la pinza. Controla dos mo
   cout << "\n---- 'Button_1' controla la crerradura de la pinza ----" << endl;
   cout << "---- Los 2 motores de linea roja giran hacia atras por 1 segundo con una potencia de 0.5  ----" << endl;
   cout << "---- LA PINZA SE CIERRA ----" << endl;
+  cout << " La accion ha terminado - " ;
   return 0;
 }
 
