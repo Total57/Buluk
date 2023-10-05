@@ -218,7 +218,7 @@ int main (){ // Funcion del codigo principal
       if (boton == "Button_1"|| boton == "button_1" || boton == "button1" || boton == "BUTTON_1" || boton == "BUTTON1" || boton == "boton_1" || boton == "boton1" || boton == "BOTON1"){
         cout << Button_1 () ;
       }
-      cout << "\nDigita el otro boton existente o digita 'finalizar' para terminar el programa (solo aplica cuando se haya completado el tiempo): " ;
+      cout << "\nDigita el otro boton existente o digita 'finalizar' para terminar el programa (solo aplica cuando una vez pasado 3 min): " ;
       cin >> boton ;
     }else{
       cout << "----- El boton no existe -----" << endl;
